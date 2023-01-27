@@ -1,0 +1,21 @@
+<h1> Gráfica de dona</h1>
+<span>Redes sociales más usadas</span>
+<hr>
+
+<div class="alert alert-info"
+        *ngIf="doughnutChartData.length === 0; else graphic"> Cargando... </div>
+
+<div class="row">
+    <div class="col">
+        <ng-template #graphic>
+            <div style="display: block;">
+                <canvas baseChart class="chart"
+                    [data]="doughnutChartData"
+                    [labels]="doughnutChartLabels"
+                    [chartType]="doughnutChartType"
+                    [colors]="colors">
+                </canvas>
+            </div>
+        </ng-template>
+    </div>
+</div>
